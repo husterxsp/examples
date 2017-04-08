@@ -9,6 +9,8 @@
 #include "vutils.h"
 #include "vbm.h"
 
+#include <cstring>
+
 #include "vmath.h"
 
 #include <stdio.h>

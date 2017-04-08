@@ -39,7 +39,7 @@ void VermilionApplication::Initialize(const char * title)
 #ifdef _WIN32
     m_appStartTime = ::GetTickCount64();
 #else
-    gettimeofday(&m_appStartTime, nullptr);
+    gettimeofday(&m_appStartTime, 0);
 #endif
 
     glfwInit();
@@ -48,7 +48,7 @@ void VermilionApplication::Initialize(const char * title)
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
 #endif
 
-    m_pWindow = glfwCreateWindow(800, 600, title ? title : "OpenGL Application", nullptr, nullptr);
+    m_pWindow = glfwCreateWindow(800, 600, title ? title : "OpenGL Application", 0, 0);
     glfwSetWindowUserPointer(m_pWindow, this);
     glfwSetWindowSizeCallback(m_pWindow, window_size_callback);
     glfwSetKeyCallback(m_pWindow, key_callback);
